@@ -113,8 +113,8 @@ class MoveRobot():
 			if yaw_diff < -np.pi:
 				yaw_diff += 2 * np.pi
 		self.vel.angular.z = k_yaw * yaw_diff
-		# self.vel.linear.x = v_prime * (1 - abs(yaw_diff) / np.pi) + v_min
-		self.vel.linear.x = 0.5
+		self.vel.linear.x = v_prime * (1 - abs(yaw_diff) / np.pi) + v_min
+		# self.vel.linear.x = 0.5
 		self.linear_v_history.append(self.vel.linear.x)
 
 	def send_velocity_cmd(self):

@@ -62,7 +62,7 @@ class ObstacleDetector():
 		self.targt_index = 0
 
 		self.use_path = 1
-		self.print_map = False
+		self.need_map = True
 
 		self.obstacle_map = np.zeros((map_size, map_size))
 
@@ -84,7 +84,7 @@ class ObstacleDetector():
 		sectors = np.zeros(number_of_sectors)
 		map_x, map_y = self.scale_to_map(robot_x, robot_y)
 
-		if self.print_map:
+		if self.need_map:
 			self.print_map(map_x, map_y)
 
 		for x in range(round(map_x - ((ws - 1) / 2)), round(map_x + ((ws - 1) / 2))):
