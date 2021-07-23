@@ -2,6 +2,7 @@
 
 # Import the Python library for ROS
 import rospy
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -18,7 +19,7 @@ from gazebo_msgs.msg import ModelState
 from gazebo_msgs.srv import SetModelState
 from gazebo_msgs.srv import GetModelState
 
-from std_msgs.msg import Float64, Float64MultiArray
+from std_msgs.msg import Float64MultiArray
 
 robot_x = -8.7
 robot_y = -8.3
@@ -66,8 +67,6 @@ class MoveRobot():
 		self.pos_diffs = []
 
 		self.is_finished = False
-
-		self.is_stuck = False
 
 		self.linear_v_history = []
 
